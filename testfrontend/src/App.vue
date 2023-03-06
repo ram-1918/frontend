@@ -11,17 +11,18 @@
   <script>
   import FormBody from './components/FormBody.vue'
   import axios from 'axios'
-  export default {
+  export default {    
     components: {
       FormBody
     },
     data(){
       return {
+        API_URL : 'http://18.204.15.28:8000/apis/create/',
         users: []
       }
     },
     created(){
-      axios.get('http://127.0.0.1:8000/apis/create/')
+      axios.get(this.API_URL)
       .then(response => {
         this.users = response.data;
         console.log(this.users, 'frsgrgr')
@@ -29,7 +30,7 @@
     },
     methods:{
       submit(val){
-        axios.post('http://127.0.0.1:8000/apis/create/', val)
+        axios.post(this.API_URL, val)
         .then(response => {
           console.log(val, response.data);
           this.users.push(val);
