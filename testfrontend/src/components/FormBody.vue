@@ -1,11 +1,12 @@
 <template>
-    <form @submit.prevent = "submitdata">
+    <!-- <form @submit.prevent = "submitdata">
+        {!! csrf_field() !!} -->
         <label for = "name">Name</label>
         <input type = "text" id = "name" placeholder="Enter Name" v-model = "enteredName" />
         <label for = "password">password</label>
         <input type = "text" id = "password" placeholder="Enter Password" v-model = "enteredPassword" />
-        <button type = "submit">Login</button>
-    </form>
+        <button @click = "submitdata">Login</button>
+    <!-- </form> -->
 </template>
 
 <script>
